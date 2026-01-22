@@ -64,7 +64,7 @@ npm run lint         # Run linter
 - Organize haptics-related utilities in dedicated directories
 
 ### Accessibility Guidelines
-**All UI components MUST comply with ADA (Americans with Disabilities Act) guidelines, especially for visually impaired users:**
+**All UI components MUST comply with WCAG 2.1 AA standards to ensure ADA compliance, especially for visually impaired users:**
 
 #### Screen Reader Support
 - Use semantic HTML elements (`<button>`, `<nav>`, `<main>`, `<header>`, `<footer>`, etc.) instead of generic `<div>` or `<span>` when appropriate
@@ -110,7 +110,7 @@ npm run lint         # Run linter
 - Validate with automated tools (axe, Lighthouse accessibility audit, WAVE)
 - Ensure keyboard-only navigation works for all user flows
 - Test with browser zoom at 200%
-- Verify color contrast ratios meet WCAG AA standards minimum
+- Verify color contrast ratios meet WCAG AA standards
 
 ## Environment Variables
 
