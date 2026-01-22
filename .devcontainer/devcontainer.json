@@ -88,7 +88,6 @@
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "dsznajder.es7-react-js-snippets",
-        "msjsdiag.vscode-react-native",
         "ms-vscode.vscode-typescript-next",
         "eamodio.gitlens",
         "mhutchie.git-graph",
@@ -104,7 +103,7 @@
       ]
     }
   },
-  "postCreateCommand": "npm install -g npm@latest",
+  "postCreateCommand": "node --version && npm --version",
   "remoteUser": "node",
   "forwardPorts": [3000, 3001],
   "portsAttributes": {
