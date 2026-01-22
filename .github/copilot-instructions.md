@@ -63,6 +63,55 @@ npm run lint         # Run linter
 - Use descriptive names for files and functions
 - Organize haptics-related utilities in dedicated directories
 
+### Accessibility Guidelines
+**All UI components MUST comply with ADA (Americans with Disabilities Act) guidelines, especially for visually impaired users:**
+
+#### Screen Reader Support
+- Use semantic HTML elements (`<button>`, `<nav>`, `<main>`, `<header>`, `<footer>`, etc.) instead of generic `<div>` or `<span>` when appropriate
+- Provide descriptive `aria-label` or `aria-labelledby` attributes for interactive elements that lack visible text
+- Use `aria-describedby` to provide additional context when needed
+- Ensure all images have meaningful `alt` text that describes the content or function (use empty `alt=""` for decorative images)
+- Add `aria-live` regions for dynamic content updates that should be announced to screen readers
+
+#### Keyboard Navigation
+- All interactive elements must be keyboard accessible (Tab, Enter, Space, Arrow keys)
+- Provide visible focus indicators using `:focus-visible` CSS
+- Maintain logical tab order (avoid positive `tabindex` values)
+- Implement proper keyboard shortcuts and ensure they don't conflict with screen reader shortcuts
+- Use `role="button"` with `onKeyDown` handlers for non-button interactive elements
+
+#### Color and Contrast
+- Ensure text has a minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text (WCAG AA)
+- Never use color alone to convey information (provide text labels, patterns, or icons as well)
+- Support high contrast mode and respect user's system preferences
+
+#### Text and Content
+- Use clear, descriptive headings in proper hierarchical order (`<h1>` to `<h6>`)
+- Provide skip links to bypass repetitive navigation
+- Ensure text can be resized up to 200% without loss of functionality
+- Use relative units (rem, em) instead of fixed pixels for font sizes
+- Write clear error messages and associate them with form fields using `aria-describedby`
+
+#### Forms and Interactive Elements
+- Associate all form inputs with labels using `<label>` elements or `aria-label`
+- Group related form elements with `<fieldset>` and `<legend>`
+- Mark required fields explicitly with `required` attribute and `aria-required="true"`
+- Provide clear error messages with `role="alert"` or `aria-live="assertive"`
+- Use `autocomplete` attributes appropriately for common input types
+
+#### Haptics and Accessibility
+- Provide text alternatives or announcements for haptic feedback events
+- Ensure haptic features have non-haptic equivalents (visual or audio cues)
+- Allow users to disable or adjust haptic intensity
+- Document haptic patterns and their meanings in accessible formats
+
+#### Testing Requirements
+- Test with screen readers (NVDA, JAWS, VoiceOver) before committing UI changes
+- Validate with automated tools (axe, Lighthouse accessibility audit, WAVE)
+- Ensure keyboard-only navigation works for all user flows
+- Test with browser zoom at 200%
+- Verify color contrast ratios meet WCAG AA standards minimum
+
 ## Environment Variables
 
 - Store sensitive data in `.env*.local` files (gitignored)
