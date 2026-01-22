@@ -106,8 +106,8 @@ npm run lint         # Run linter
 - Document haptic patterns and their meanings in accessible formats
 
 #### Testing Requirements
-- Test with screen readers (NVDA, JAWS, VoiceOver) before committing UI changes
-- Validate with automated tools (axe, Lighthouse accessibility audit, WAVE)
+- Test with screen readers (NVDA, JAWS, VoiceOver, ChromeVox) before committing UI changes
+- Validate with automated tools (axe, axe-core, Lighthouse accessibility audit, WAVE)
 - Ensure keyboard-only navigation works for all user flows
 - Test with browser zoom at 200%
 - Verify color contrast ratios meet WCAG AA standards
